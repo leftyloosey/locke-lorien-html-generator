@@ -68,9 +68,9 @@ class iCard {
 function getJSON() {
     jdata = fs.readFileSync('./dist/test.json');
     employees = JSON.parse(jdata)
+    counter()
 }
 
-getJSON()
 
 function counter() {
     for (let i=0; i<employees.length; i++) {
@@ -88,6 +88,7 @@ function counter() {
         }
         // console.log(cardsArr)
 }}
+getJSON()
 
 
 const top = `<!DOCTYPE html>

@@ -10,7 +10,6 @@ var writeJSON = fs.createWriteStream('./dist/test.json', {
     flags: 'a' })
 
 function generateMarkUp(a,b,c) {
-    const rawh = require("/Users/davidhardin/Desktop/ch/ch10/dist/HTMLbuild")
 
     htmlWrite.write(a)
     for (i=0;i < b.length;i++) {
@@ -32,14 +31,34 @@ function addAnother() {
 
 function finish() {
     console.log(classy.employees)
+   
     writeJSON.write(`${JSON.stringify(classy.employees, null, 4)}`)
 
+    setTimeout(() => {
+        printPage()
+    }
+    , 1000)
+    
 }
 
 function printPage() {
-    const rawh = require("/Users/davidhardin/Desktop/ch/ch10/dist/HTMLbuild")
-    generateMarkUp(rawh.top,rawh.cardsArr,rawh.bottom)
-}
+    inquirer.prompt(prompts.printPage).then((data) => {
+
+    if (data.toprint == "Yes") {
+        setTimeout(() => {
+        const rawh = require("/Users/davidhardin/Desktop/ch/ch10/dist/HTMLbuild")
+        generateMarkUp(rawh.top,rawh.cardsArr,rawh.bottom)
+        },
+        1000)
+        console.log("Printing!")
+    }
+    else if (data.toprint == "No") {
+        console.log("ok")
+    }
+   
+
+
+})}
 
   
 exports.generateMarkUp = generateMarkUp

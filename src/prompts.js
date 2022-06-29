@@ -79,7 +79,19 @@ const addPrompt = [
     }
 ]
 
+const printPage = [
+    {
+    type: 'list',
+    name: 'toprint',
+    message: 'Print page?',
+    choices: ['Yes',
+                'No',
+            ]
+    }
+]
+
 exports.manPrompts = manPrompts
 exports.addPrompt = addPrompt
 exports.intPrompts = intPrompts
 exports.engPrompts = engPrompts
+exports.printPage = printPage
