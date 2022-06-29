@@ -1,7 +1,5 @@
 const { Employee } = require("/Users/davidhardin/Desktop/ch/ch10/lib/class")
 
-
-
 describe("Employee", () => {
     describe("getName", () => {
         it("should be a function, nameof should match this.nameOf", () => {
@@ -43,19 +41,17 @@ describe("Employee", () => {
         expect(mock2).toBeCalledWith("42")
 
     })})
-   
-        
+    describe("getRole", () => {
+        it("should run when called, console should log employee!", () => {
+          
+            const bill = new Employee("bill", "42", "bill@email")
 
+            const mock = jest.spyOn(bill, "getRole")
+            const mock2 = jest.spyOn(console, "log")
+            mock2.mockImplementation(() => { })
 
-    // describe("getEmail", () => {
-    //     it("should return the employee's name as entered", () => {
-    //     const bill = new Employee("bill", "42", "bill@email")
+            bill.getRole()
+        expect(mock).toHaveBeenCalled()
+        expect(mock2).toBeCalledWith("employee!")
 
-    // describe("getEmail", () => {
-    //         it("should return the employee's name as entered", () => {
-    //         const bill = new Employee("bill", "42", "bill@email")
-    
-
-
-
-
+    })})

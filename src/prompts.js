@@ -57,6 +57,11 @@ const intPrompts = [
     },
     {
     type: 'input',
+    name: 'intEmail',
+    message: 'Email?',
+    },
+    {
+    type: 'input',
     name: 'intSchl',
     message: "School?",
     },

@@ -8,7 +8,7 @@ describe("Manager", () => {
             nameOf = "bill"
             idOf = "42"
             emailOf = "bill@email"
-            const bill = new Manager("kolij")
+            const bill = new Manager("8888")
 
             expect(typeof bill.getName).toBe("function")
             expect(bill.nameOf).toMatch("bill")
@@ -19,7 +19,7 @@ describe("Manager", () => {
             nameOf = "bill"
             idOf = "42"
             emailOf = "bill@email"
-            const bill = new Manager("kolij")
+            const bill = new Manager("8888")
 
             const mock = jest.spyOn(bill, "getName")
             const mock2 = jest.spyOn(console, "log")
@@ -34,7 +34,7 @@ describe("Manager", () => {
             nameOf = "bill"
             idOf = "42"
             emailOf = "bill@email"
-            const bill = new Manager("kolij")
+            const bill = new Manager("8888")
 
         expect(typeof bill.getID).toBe("function")
         expect(bill.idOf).toMatch("42")
@@ -45,7 +45,7 @@ describe("Manager", () => {
             nameOf = "bill"
             idOf = "42"
             emailOf = "bill@email"
-            const bill = new Manager("kolij")
+            const bill = new Manager("8888")
 
             const mock = jest.spyOn(bill, "getID")
             const mock2 = jest.spyOn(console, "log")
@@ -61,7 +61,7 @@ describe("Manager", () => {
             nameOf = "bill"
             idOf = "42"
             emailOf = "bill@email"
-            const bill = new Manager("kolij")
+            const bill = new Manager("8888")
 
         expect(typeof bill.getEmail).toBe("function")
         expect(bill.emailOf).toMatch("bill@email")
@@ -72,7 +72,7 @@ describe("Manager", () => {
             nameOf = "bill"
             idOf = "42"
             emailOf = "bill@email"
-            const bill = new Manager("kolij")
+            const bill = new Manager("8888")
 
             const mock = jest.spyOn(bill, "getEmail")
             const mock2 = jest.spyOn(console, "log")
@@ -88,7 +88,7 @@ describe("Manager", () => {
             nameOf = "bill"
             idOf = "42"
             emailOf = "bill@email"
-            const bill = new Manager("kolij")
+            const bill = new Manager("8888")
 
             const mock = jest.spyOn(bill, "getRole")
             const mock2 = jest.spyOn(console, "log")

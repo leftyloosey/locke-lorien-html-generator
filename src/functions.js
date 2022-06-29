@@ -1,11 +1,8 @@
 const fs = require("fs")
 const inquirer = require("inquirer")
 const prompts = require("/Users/davidhardin/Desktop/ch/ch10/src/prompts")
-// const Employee = require("/Users/davidhardin/Desktop/ch/ch10/lib/class")
-// const Manager = require("/Users/davidhardin/Desktop/ch/ch10/lib/class")
-// const Engineer = require("/Users/davidhardin/Desktop/ch/ch10/lib/class")
 const classy = require("/Users/davidhardin/Desktop/ch/ch10/lib/class")
-
+const rawh = require("/Users/davidhardin/Desktop/ch/ch10/dist/HTMLbuild")
 
 var htmlWrite = fs.createWriteStream('./dist/index_test.html', {
     flags: 'a' })
@@ -13,28 +10,29 @@ var htmlWrite = fs.createWriteStream('./dist/index_test.html', {
 var writeJSON = fs.createWriteStream('./dist/test.json', {
     flags: 'a' })
 
-
-function generateMarkUp(data) {
-    // htmlwrite.write(`${data.maName}\r\n`)
+function generateMarkUp(a,b,c) {
+    htmlWrite.write(a)
+    for (i=0;i < b.length;i++) {
+        htmlWrite.write(b[i].print)
+    }
+    htmlWrite.write(c)
 }
 
-function getJSON() {
-    let jdata = fs.readFileSync('./dist/test.json');
-    let employee = JSON.parse(jdata)
+// function getJSON() {
+//     const jdata = fs.readFileSync('./dist/test.json');
+//     let employees = JSON.parse(jdata)
 
-    console.log(employee[0].officeNo)
-    console.log(employee[1].engName)
+//     console.log(employees[0])
     
-}
+    
+// }
 
 function addAnother() {
     inquirer.prompt(prompts.addPrompt).then((data) => {
         if (data.addAnother == "Engineer") {
-            console.log("fuck")
             classy.engQuest()
         }
         else if (data.addAnother == "Intern") {
-            console.log("interns")
             classy.intQuest()
         }
         else finish()
@@ -46,11 +44,8 @@ function finish() {
 
 }
 
-
-
 exports.generateMarkUp = generateMarkUp
 exports.writeJSON = writeJSON
-exports.getJSON = getJSON
+// exports.getJSON = getJSON
 exports.addAnother = addAnother
 exports.finish = finish
-

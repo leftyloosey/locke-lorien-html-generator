@@ -1,20 +1,30 @@
 [
     {
-        "nameOf": "bobby",
+        "nameOf": "bill",
         "idOf": "42",
-        "emailOf": "bbymail@",
-        "officeNo": "546464564"
+        "emailOf": "bill@email",
+        "officeNo": "333",
+        "roleOf": "manager"
     },
     {
-        "nameOf": "grocerbob",
-        "idOf": "54",
-        "emailOf": "gcoer@",
-        "engGit": "grocgit"
+        "nameOf": "raquel",
+        "idOf": "66",
+        "emailOf": "raquel@email",
+        "engGit": "raquelzee",
+        "roleOf": "engineer"
     },
     {
-        "nameOf": "timmy",
-        "idOf": "45",
-        "emailOf": "timm@",
-        "engGit": "gittim"
+        "nameOf": "vlad",
+        "idOf": "9",
+        "emailOf": "vlad@email",
+        "intSchl": "trans_tech",
+        "roleOf": "intern"
+    },
+    {
+        "nameOf": "vlad",
+        "idOf": "9",
+        "emailOf": "vlad@email",
+        "intSchl": "trans_tech",
+        "roleOf": "intern"
     }
 ]
