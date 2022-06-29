@@ -1,0 +1,20 @@
+[
+    {
+        "nameOf": "bobby",
+        "idOf": "42",
+        "emailOf": "bbymail@",
+        "officeNo": "546464564"
+    },
+    {
+        "nameOf": "grocerbob",
+        "idOf": "54",
+        "emailOf": "gcoer@",
+        "engGit": "grocgit"
+    },
+    {
+        "nameOf": "timmy",
+        "idOf": "45",
+        "emailOf": "timm@",
+        "engGit": "gittim"
+    }
+]

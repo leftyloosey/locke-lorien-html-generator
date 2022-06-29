@@ -19,14 +19,6 @@ const manPrompts = [
     name: 'maNo',
     message: "Office Number?"
     },
-    // {
-    // type: 'list',
-    // name: 'empType',
-    // message: 'Add teammate:',
-    // choices: ['Engineer',
-    //             'Intern'
-    //         ]
-    // }
 ]
 
 const engPrompts = [
@@ -65,7 +57,7 @@ const intPrompts = [
     },
     {
     type: 'input',
-    name: 'intSchool',
+    name: 'intSchl',
     message: "School?",
     },
 ]
