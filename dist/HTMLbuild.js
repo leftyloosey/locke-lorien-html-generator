@@ -7,7 +7,7 @@ let jdata
 
 var cardsArr = []
 
-// const linebreak = `            <div id="col1" class="col px-3">`
+
 
 class mCard {
     constructor(a) {

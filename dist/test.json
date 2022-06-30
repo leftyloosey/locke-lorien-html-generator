@@ -1,0 +1,30 @@
+[
+    {
+        "nameOf": "arthur",
+        "idOf": "456",
+        "emailOf": "arthur@earth.com",
+        "officeNo": "123445",
+        "roleOf": "manager"
+    },
+    {
+        "nameOf": "david",
+        "idOf": "242342",
+        "emailOf": "thisgoestodavid@gmail.com",
+        "engGit": "leftyloosey",
+        "roleOf": "engineer"
+    },
+    {
+        "nameOf": "marie",
+        "idOf": "88",
+        "emailOf": "marie@science.com",
+        "intSchl": "kolij",
+        "roleOf": "intern"
+    },
+    {
+        "nameOf": "sally",
+        "idOf": "345",
+        "emailOf": "sally@email.com",
+        "engGit": "sallyhub",
+        "roleOf": "engineer"
+    }
+]
