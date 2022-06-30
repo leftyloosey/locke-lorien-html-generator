@@ -1,6 +1,7 @@
 const { Employee } = require("/Users/davidhardin/Desktop/ch/ch10/lib/class")
 
 describe("Employee", () => {
+    // investigate getNAme
     describe("getName", () => {
         it("should be a function, nameof should match this.nameOf", () => {
             const bill = new Employee("bill", "42", "bill@email")
@@ -20,6 +21,8 @@ describe("Employee", () => {
             expect(mock).toHaveBeenCalled()
             expect(mock2).toBeCalledWith("bill")
         })})
+
+    //investivate getID
     describe("getID", () => {
         it("should be a function, idof should match this.idOf", () => {
         const bill = new Employee("bill", "42", "bill@email")
@@ -41,6 +44,9 @@ describe("Employee", () => {
         expect(mock2).toBeCalledWith("42")
 
     })})
+
+    // investigate getEmail
+
     describe("getEmail", () => {
         it("should be a function, emailOf should match this.emailOf", () => {
         const bill = new Employee("bill", "42", "bill@email")
@@ -62,6 +68,9 @@ describe("Employee", () => {
         expect(mock2).toBeCalledWith("bill@email")
 
     })})
+
+//investigate getRole
+
     describe("getRole", () => {
         it("should run when called, console should log employee!", () => {
           
