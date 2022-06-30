@@ -7,13 +7,12 @@ let jdata
 
 var cardsArr = []
 
+// const linebreak = `            <div id="col1" class="col px-3">`
+
 class mCard {
     constructor(a) {
       this.print = `        
-      <div class="row">
-          <div id="col1" class="col px-3">
-      
-              <div class="card g-2" style="width: 18rem;">
+            <div class="card g-2" style="width: 18rem;">
                   <div class="card-header bg-primary text-white">
                       ${a.nameOf} <br>
                       ${a.roleOf}
@@ -24,13 +23,20 @@ class mCard {
                       <li class="list-group-item border bg-light">Email: ${a.emailOf}</li>
                       <li class="list-group-item border bg-light">Office#: ${a.officeNo}</li>
                   </ul>
+                  </div>
+                  <div class="row text-white">.</div>
+                  
                   `
-    }}
+        this.colbreak = `            
+        </div>
+        <div id="col1" class="col px-3">
+        
+        `
+}}
 class eCard {
     constructor(a) {
         this.print = `        
-        <div class="row">
-            <div id="col1" class="col px-3">
+   
         
                 <div class="card g-2" style="width: 18rem;">
                     <div class="card-header bg-primary text-white">
@@ -43,13 +49,20 @@ class eCard {
                         <li class="list-group-item border bg-light">Email: ${a.emailOf}</li>
                         <li class="list-group-item border bg-light">GitHub: ${a.engGit}</li>
                     </ul>
+                    </div>
+                    <div class="row text-white">.</div>
                     `
-    }}
+        this.colbreak = `            
+        </div>
+        <div id="col1" class="col px-3">
+        
+        `
+
+}}
 class iCard {
     constructor(a) {
         this.print = `        
-        <div class="row">
-            <div id="col1" class="col px-3">
+
         
                 <div class="card g-2" style="width: 18rem;">
                     <div class="card-header bg-primary text-white">
@@ -62,8 +75,15 @@ class iCard {
                         <li class="list-group-item border bg-light">Email: ${a.emailOf}</li>
                         <li class="list-group-item border bg-light">School#: ${a.intSchl}</li>
                     </ul>
+                    </div>
+                    <div class="row text-white">.</div>
                     `
-    }}
+        this.colbreak = `            
+        </div>
+        <div id="col1" class="col px-3">
+        
+                    `
+}}
 
 function getJSON() {
     jdata = fs.readFileSync('./dist/test.json');
@@ -77,17 +97,27 @@ function counter() {
         if (employees[i].roleOf == "manager") {
             const mcard = new mCard(employees[i])
             cardsArr.push(mcard)
+            // if ([i] % 3 === 0) {
+            //     cardsArr.push(linebreak)
+            // }
         }
         if (employees[i].roleOf == "engineer") {
             const ecard = new eCard(employees[i])
             cardsArr.push(ecard)
-        }
+            // if ([i] % 3 === 0) {
+            //     cardsArr.push(linebreak)
+            }
+        
         if (employees[i].roleOf == "intern") {
             const icard = new iCard(employees[i])
             cardsArr.push(icard)
+            // if ([i] % 3 === 0) {
+            //     cardsArr.push(linebreak)
+            // }
         }
         // console.log(cardsArr)
 }}
+
 getJSON()
 
 
@@ -106,11 +136,12 @@ const top = `<!DOCTYPE html>
         <div class="container-fluid" style="background-color: white">
             <div class="w-100 text-center mt-3 mb-3 bg-opacity-10 text-white" style="background-color: lightcoral">
             <h3>our dear team</h3>
-        </div>`
+        </div>
+
+        <div class="row">
+            <div id="col1" class="col px-3">`
 
 const card1= `        
-<div class="row">
-    <div id="col1" class="col px-3">
 
         <div class="card g-2" style="width: 18rem;">
             <div class="card-header bg-primary text-white">
@@ -123,10 +154,13 @@ const card1= `
                 <li class="list-group-item border bg-light">Email: ${employees[0].emailOf}</li>
                 <li class="list-group-item border bg-light">Office#: ${employees[0].officeNo}</li>
             </ul>
-        </div>`
-const card2= ``
+        </div>
+        <div class="row text-white">.</div>
+        `
 
-const bottom = `        </div>
+
+const bottom = `        </div>   
+                    </div>
     
 <script src="script.js"></script>
 
@@ -138,3 +172,4 @@ exports.card1 = card1
 exports.bottom = bottom
 exports.cardsArr = cardsArr
 exports.counter = counter
+// exports.linebreak = linebreak

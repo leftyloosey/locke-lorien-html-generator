@@ -12,8 +12,14 @@ var writeJSON = fs.createWriteStream('./dist/test.json', {
 function generateMarkUp(a,b,c) {
 
     htmlWrite.write(a)
+
     for (i=0;i < b.length;i++) {
         htmlWrite.write(b[i].print)
+        if ([i+1] % 3 === 0) {
+            htmlWrite.write(b[i+1].colbreak + `colbreak`)
+        }
+        else if ([i] % 3 !== 0) {b[i].colbreak = ` nope`
+        }
     }
     htmlWrite.write(c)
 }

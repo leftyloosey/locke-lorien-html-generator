@@ -41,6 +41,27 @@ describe("Employee", () => {
         expect(mock2).toBeCalledWith("42")
 
     })})
+    describe("getEmail", () => {
+        it("should be a function, emailOf should match this.emailOf", () => {
+        const bill = new Employee("bill", "42", "bill@email")
+
+        expect(typeof bill.getName).toBe("function")
+        expect(bill.emailOf).toMatch("bill@email")
+        })})
+
+    describe("getEmail", () => {
+        it("should run when called, console should log emailOf", () => {
+        const bill = new Employee("bill", "42", "bill@email")
+
+        const mock = jest.spyOn(bill, "getEmail")
+        const mock2 = jest.spyOn(console, "log")
+        mock2.mockImplementation(() => { })
+
+        bill.getEmail()
+        expect(mock).toHaveBeenCalled()
+        expect(mock2).toBeCalledWith("bill@email")
+
+    })})
     describe("getRole", () => {
         it("should run when called, console should log employee!", () => {
           
