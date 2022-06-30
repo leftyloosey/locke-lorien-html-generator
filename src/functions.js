@@ -9,8 +9,6 @@ var htmlWrite = fs.createWriteStream('./dist/index_test.html', {
 var writeJSON = fs.createWriteStream('./dist/test.json', {
     flags: 'a' })
 
-
-// this function writes all html for finished page
 function generateMarkUp(a,b,c) {
 
     htmlWrite.write(a)
@@ -18,13 +16,14 @@ function generateMarkUp(a,b,c) {
     for (i=0;i < b.length;i++) {
         htmlWrite.write(b[i].print)
         if ([i+1] % 3 === 0) {
-            htmlWrite.write(b[i+1].colbreak)
+            htmlWrite.write(b[i+1].colbreak + `colbreak`)
         }
-
+        else if ([i] % 3 !== 0) {b[i].colbreak = ` nope`
+        }
+    }
     htmlWrite.write(c)
-}}
+}
 
-// inquirer choice
 function addAnother() {
     inquirer.prompt(prompts.addPrompt).then((data) => {
         if (data.addAnother == "Engineer") {
@@ -36,8 +35,6 @@ function addAnother() {
         else finish()
 })}
 
-
-//finish main function chain before passing off to print
 function finish() {
     console.log(classy.employees)
    
@@ -47,9 +44,9 @@ function finish() {
         printPage()
     }
     , 1000)
+    
 }
 
-//print page yes or no choice
 function printPage() {
     inquirer.prompt(prompts.printPage).then((data) => {
 
@@ -64,6 +61,9 @@ function printPage() {
     else if (data.toprint == "No") {
         console.log("ok")
     }
+   
+
+
 })}
 
   

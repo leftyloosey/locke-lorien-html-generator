@@ -5,8 +5,9 @@ const fs = require("fs")
 let employees
 let jdata
 
-// cards ready to be populated with user data
 var cardsArr = []
+
+// const linebreak = `            <div id="col1" class="col px-3">`
 
 class mCard {
     constructor(a) {
@@ -59,7 +60,8 @@ class eCard {
         <div id="col1" class="col px-3">
         
         `
-    }}
+
+}}
 class iCard {
     constructor(a) {
         this.print = `        
@@ -87,33 +89,42 @@ class iCard {
                     `
 }}
 
-//for getting JSON
 function getJSON() {
     jdata = fs.readFileSync('./dist/test.json');
     employees = JSON.parse(jdata)
     counter()
 }
 
-// push html cards to an array
+
 function counter() {
     for (let i=0; i<employees.length; i++) {
         if (employees[i].roleOf == "manager") {
             const mcard = new mCard(employees[i])
             cardsArr.push(mcard)
+            // if ([i] % 3 === 0) {
+            //     cardsArr.push(linebreak)
+            // }
         }
         if (employees[i].roleOf == "engineer") {
             const ecard = new eCard(employees[i])
             cardsArr.push(ecard)
+            // if ([i] % 3 === 0) {
+            //     cardsArr.push(linebreak)
             }
+        
         if (employees[i].roleOf == "intern") {
             const icard = new iCard(employees[i])
             cardsArr.push(icard)
-            }
+            // if ([i] % 3 === 0) {
+            //     cardsArr.push(linebreak)
+            // }
+        }
+        // console.log(cardsArr)
 }}
 
 getJSON()
 
-// the top and bottom of eventual page
+
 const top = `<!DOCTYPE html>
 <html lang="en">
     <head>
@@ -134,6 +145,24 @@ const top = `<!DOCTYPE html>
         <div class="row">
             <div id="col1" class="col px-3">`
 
+const card1= `        
+
+        <div class="card g-2" style="width: 18rem;">
+            <div class="card-header bg-primary text-white">
+                ${employees[0].nameOf} <br>
+                ${employees[0].roleOf}
+            </div>
+            <ul class="list-group list-group-flush shadow border px-3">
+            
+                <li class="list-group-item border bg-light">ID: ${employees[0].idOf}</li>
+                <li class="list-group-item border bg-light">Email: ${employees[0].emailOf}</li>
+                <li class="list-group-item border bg-light">Office#: ${employees[0].officeNo}</li>
+            </ul>
+        </div>
+        <div class="row text-white">.</div>
+        `
+
+
 const bottom = `        </div>   
                     </div>
     
@@ -143,6 +172,8 @@ const bottom = `        </div>
 </html>`
 
 exports.top = top
+exports.card1 = card1
 exports.bottom = bottom
 exports.cardsArr = cardsArr
 exports.counter = counter
+// exports.linebreak = linebreak

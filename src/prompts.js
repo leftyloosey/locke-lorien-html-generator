@@ -1,5 +1,3 @@
-// all the prompts for inquirer
-
 const manPrompts = [
     {
     type: 'input',
