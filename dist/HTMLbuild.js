@@ -19,7 +19,7 @@ class mCard {
                   <ul class="list-group list-group-flush shadow border px-3">
                   
                       <li class="list-group-item border bg-light">ID: ${a.idOf}</li>
-                      <li class="list-group-item border bg-light">Email: ${a.emailOf}</li>
+                      <li class="list-group-item border bg-light">Email: <a href="mailto:thisgoestodavid@gmail.com>${a.emailOf}</a></li>
                       <li class="list-group-item border bg-light">Office#: ${a.officeNo}</li>
                   </ul>
                   </div>
@@ -45,8 +45,8 @@ class eCard {
                     <ul class="list-group list-group-flush shadow border px-3">
                     
                         <li class="list-group-item border bg-light">ID: ${a.idOf}</li>
-                        <li class="list-group-item border bg-light">Email: ${a.emailOf}</li>
-                        <li class="list-group-item border bg-light">GitHub: ${a.engGit}</li>
+                        <li class="list-group-item border bg-light">Email: <a href="mailto:thisgoestodavid@gmail.com>${a.emailOf}</a></li>
+                        <li class="list-group-item border bg-light">GitHub: <a href="https://github.com/${a.engGit}">${a.engGit}</li>
                     </ul>
                     </div>
                     <div class="row text-white">.</div>
@@ -70,7 +70,7 @@ class iCard {
                     <ul class="list-group list-group-flush shadow border px-3">
                     
                         <li class="list-group-item border bg-light">ID: ${a.idOf}</li>
-                        <li class="list-group-item border bg-light">Email: ${a.emailOf}</li>
+                        <li class="list-group-item border bg-light">Email: <a href="mailto:thisgoestodavid@gmail.com>${a.emailOf}</a></li>
                         <li class="list-group-item border bg-light">School#: ${a.intSchl}</li>
                     </ul>
                     </div>
